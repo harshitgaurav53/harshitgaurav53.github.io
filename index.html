@@ -22,7 +22,6 @@ justify-content:center;
 text-align:center;
 overflow:hidden;
 }
-
 .hero video{
 position:absolute;
 width:100%;
@@ -31,7 +30,6 @@ object-fit:cover;
 z-index:-2;
 opacity:.35;
 }
-
 .hero::after{
 content:'';
 position:absolute;
@@ -39,16 +37,8 @@ inset:0;
 background:linear-gradient(120deg,rgba(124,58,237,.6),rgba(236,72,153,.5));
 z-index:-1;
 }
-
-.hero h1{
-font-size:clamp(60px,8vw,120px);
-font-weight:900;
-}
-
-.hero p{
-margin-top:20px;
-color:#eee;
-}
+.hero h1{font-size:clamp(60px,8vw,120px);font-weight:900;}
+.hero p{margin-top:20px;color:#eee;}
 
 .hero-buttons{
 margin-top:40px;
@@ -65,23 +55,20 @@ text-decoration:none;
 font-weight:600;
 transition:.3s ease;
 }
-
 .btn-primary{
 background:linear-gradient(120deg,#7c3aed,#ec4899);
 color:#fff;
 box-shadow:0 20px 60px rgba(124,58,237,.4);
 }
-
 .btn-primary:hover{transform:translateY(-4px);}
 .btn-outline{border:1px solid #555;color:#fff;}
 .btn-outline:hover{background:#111;}
 
 /* SECTION */
 .section{
-padding:220px 10% 320px 10%;
+padding:220px 10% 200px 10%;
 text-align:center;
 }
-
 .section h2{
 font-size:60px;
 margin-bottom:80px;
@@ -94,7 +81,6 @@ margin:0 auto;
 cursor:pointer;
 transition:.4s ease;
 }
-
 .project-card:hover{transform:scale(1.05);}
 
 .logo-wrap{
@@ -106,49 +92,15 @@ justify-content:center;
 align-items:center;
 box-shadow:0 0 60px rgba(124,58,237,.4);
 }
-
 .logo-wrap img{width:280px;}
 
-/* CHILL MESSAGE */
 .coming-text{
 margin-top:180px;
 max-width:780px;
-margin-left:auto;
-margin-right:auto;
+margin:auto;
 line-height:1.9;
 font-size:20px;
 color:#ddd;
-animation:floatText 6s ease-in-out infinite alternate;
-}
-
-.coming-text span:first-child{
-display:block;
-font-size:30px;
-font-weight:700;
-background:linear-gradient(90deg,#7c3aed,#ec4899,#7c3aed);
-background-size:200% 200%;
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:gradientShift 6s ease infinite;
-margin-bottom:30px;
-}
-
-@keyframes gradientShift{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-@keyframes floatText{
-from{transform:translateY(0);}
-to{transform:translateY(12px);}
-}
-
-/* CONTACT */
-.contact{
-padding:180px 10%;
-text-align:center;
-background:#0d0d0d;
 }
 
 /* CASE PAGE */
@@ -163,35 +115,64 @@ transform:translateY(100%);
 transition:transform 1s cubic-bezier(.77,0,.18,1);
 overflow-y:auto;
 z-index:5000;
-padding-bottom:150px;
+padding-bottom:200px;
 }
-
 .case-page.active{transform:translateY(0);}
 
 .case-hero{
-padding:120px 10% 40px 10%;
+padding:120px 10% 60px 10%;
 text-align:center;
 }
-
 .case-hero img{width:220px;margin-bottom:40px;}
 
 .case-section{
-padding:120px 12%;
-max-width:1000px;
+padding:100px 12%;
+max-width:1100px;
 margin:auto;
 }
-
 .case-section h2{
 font-size:48px;
 margin-bottom:20px;
 }
-
 .case-section p{
 color:#ccc;
-line-height:1.7;
+line-height:1.8;
 }
 
-/* Floating Back */
+/* IMAGES */
+.case-image{
+margin:80px auto;
+max-width:900px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 40px 100px rgba(0,0,0,.7);
+}
+.case-image img{
+width:100%;
+display:block;
+}
+
+/* DOWNLOAD BUTTON */
+.download-wrap{
+text-align:center;
+margin-top:120px;
+}
+.download-btn{
+padding:18px 40px;
+border-radius:50px;
+background:linear-gradient(120deg,#7c3aed,#ec4899);
+color:#fff;
+text-decoration:none;
+font-weight:700;
+display:inline-block;
+transition:.3s ease;
+}
+.download-btn:hover{
+transform:translateY(-5px);
+box-shadow:0 20px 60px rgba(124,58,237,.6);
+}
+
+/* FLOATING BACK */
 #floatingBack{
 position:fixed;
 top:30px;
@@ -208,11 +189,10 @@ transform:translateY(-20px);
 transition:.4s ease;
 display:none;
 }
-
 #floatingBack.show{display:block;}
 #floatingBack.visible{opacity:1;transform:translateY(0);}
 
-/* WhatsApp */
+/* WHATSAPP */
 .whatsapp-float{
 position:fixed;
 right:30px;
@@ -228,13 +208,13 @@ backdrop-filter:blur(12px);
 border:1px solid rgba(255,255,255,0.15);
 box-shadow:0 20px 60px rgba(0,0,0,.6);
 }
-
 .whatsapp-float img{width:32px;}
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
 <video autoplay muted loop playsinline>
 <source src="13904819_3840_2160_25fps.mp4" type="video/mp4">
@@ -249,31 +229,23 @@ box-shadow:0 20px 60px rgba(0,0,0,.6);
 </div>
 </section>
 
+<!-- FEATURED WORK -->
 <section class="section">
 <h2>Featured Work</h2>
 
 <div class="project-card" onclick="openCase()">
-  <div class="logo-wrap">
-    <img src="seekho.png.png">
-  </div>
-  <h3 style="margin-top:60px;">Seekho – Langkawi Knowledge Pack</h3>
-  <p class="coming-text">
-    <span>Portfolio under construction 🚧</span>
-    Designing for clients by day, building this by night. <br><br>
-    Crafting ideas between deadlines and coffee refills.
-  </p>
+<div class="logo-wrap">
+<img src="seekho.png.png">
+</div>
+<h3 style="margin-top:60px;">Seekho – Langkawi Knowledge Pack</h3>
+<p class="coming-text">
+This project showcases a structured travel knowledge system
+designed for clarity, simplicity, and immersive exploration.
+</p>
 </div>
 </section>
 
-<section class="contact">
-<h2>Let’s Build Something Cool</h2>
-<div class="hero-buttons">
-<a href="Harshit_Gaurav_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
-<a href="https://wa.me/919311675655" target="_blank" class="btn btn-outline">Chat on WhatsApp</a>
-</div>
-</section>
-
-<!-- CASE STUDY PAGE -->
+<!-- CASE STUDY -->
 <div class="case-page" id="seekho-case">
 
 <div class="case-hero">
@@ -284,17 +256,29 @@ box-shadow:0 20px 60px rgba(0,0,0,.6);
 <div class="case-section">
 <h2>Overview</h2>
 <p>
-Designed a structured travel knowledge system focused on clarity,
-experience flow, and content hierarchy for Langkawi exploration.
+A carefully designed knowledge pack focused on content clarity,
+user flow, and structured information delivery for travelers.
 </p>
 </div>
 
-<div class="case-section">
-<h2>My Role</h2>
-<p>
-UX Strategy, Content Structuring, Visual Design,
-Interactive Flow Mapping.
-</p>
+<div class="case-image">
+<img src="1.jpg">
+</div>
+
+<div class="case-image">
+<img src="2.jpg">
+</div>
+
+<div class="case-image">
+<img src="3.jpg">
+</div>
+
+<div class="download-wrap">
+<a href="Seekho_Langkawi_Knowledge_Pack_Harshit Gaurav.pdf" 
+   class="download-btn" 
+   download>
+Download Knowledge Pack
+</a>
 </div>
 
 </div>
@@ -307,24 +291,24 @@ Interactive Flow Mapping.
 
 <script>
 function openCase(){
-  const casePage = document.getElementById("seekho-case");
-  const backBtn = document.getElementById("floatingBack");
-  casePage.classList.add("active");
-  backBtn.classList.add("show");
+const casePage = document.getElementById("seekho-case");
+const backBtn = document.getElementById("floatingBack");
+casePage.classList.add("active");
+backBtn.classList.add("show");
 
-  casePage.addEventListener("scroll", function(){
-    if(casePage.scrollTop > 150){
-      backBtn.classList.add("visible");
-    } else {
-      backBtn.classList.remove("visible");
-    }
-  });
+casePage.addEventListener("scroll", function(){
+if(casePage.scrollTop > 150){
+backBtn.classList.add("visible");
+}else{
+backBtn.classList.remove("visible");
+}
+});
 }
 
 function closeCase(){
-  document.getElementById("seekho-case").classList.remove("active");
-  document.getElementById("floatingBack").classList.remove("show");
-  document.getElementById("floatingBack").classList.remove("visible");
+document.getElementById("seekho-case").classList.remove("active");
+document.getElementById("floatingBack").classList.remove("show");
+document.getElementById("floatingBack").classList.remove("visible");
 }
 </script>
 
